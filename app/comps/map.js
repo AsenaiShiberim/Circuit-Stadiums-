@@ -1,12 +1,8 @@
 'use client';
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
-import {Icon} from 'leaflet';
-import events from './events'
-
-
-
-
+import { Icon } from 'leaflet';
+import events from './events';
 
 export default function Map() {
   const position = [51.505, -0.09];
@@ -14,32 +10,29 @@ export default function Map() {
 
   const icon = new Icon({
     iconUrl: './marker.png',
-    iconSize: [25, 41], // size of the icon
-    iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
   });
 
-  console.log(events)
-
   return (
-    <div  className="content">
-    
+    <div className="content">
+      <div className="flex flex-col w-full h-full">
+        <div className="h-20" />
 
-      <div className=" flex flex-col w-full h-full"> {/* <-- Outer padding */}
-        <div className="h-20"></div>
-          <MapContainer 
-          center={position} 
-          zoom={zoom}
-           className="map-container">
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <Marker position={position} icon= {icon}>
-              <Popup>A pretty CSS3 popup. <br /> Easily customizable.</Popup>
+        <MapContainer center={position} zoom={zoom} className="map-container">
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
+          
+          {events.map((event) => (
+            <Marker key={event.id} position={event.location} icon={icon}>
+              <Popup>{event.description}</Popup>
             </Marker>
-          </MapContainer>
-        </div>
+          ))}
+        </MapContainer>
+        
+      </div>
     </div>
-
   );
 }
