@@ -17,6 +17,7 @@ body {
 }
 
 .content{
+  display: flex;
   padding: 4rem;
   width: 100%;
   height: 100%;
@@ -28,4 +29,83 @@ body {
   position: relative;
   border-radius: 1rem ;
   border: 2rem;
+  
+
 }
+
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  min-width: 200px;
+  position: relative;
+  gap: 5px;
+  background-color: #1e1e1e;
+}
+
+/* Top-right title */
+.event-title {
+  top: 0px;
+  right: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  color: white;
+  border-bottom: 1px solid #FFD700;
+  padding-bottom: 5px;
+  width: fit-content;
+}
+
+/* Centered description */
+.event-desc-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 10px 10px;
+  text-align: left;
+  color: white;
+}
+
+/* Bottom row with space between */
+.bottom-card-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding: 0 5px;
+  text-align: left;
+  color: white;
+  border-bottom: 1px solid #FFD700;
+  padding-bottom: 5px;
+}
+
+
+/* Override Leaflet Popup background */
+.leaflet-popup-content-wrapper {
+  background-color: #1e1e1e !important;
+  color: white !important;
+  border-radius: 0.75rem !important;
+}
+
+/* Remove the white tip ("pointer") */
+.leaflet-popup-tip {
+  background: #1e1e1e !important;
+}
+
+/* Optional: Make sure internal content takes full space */
+.leaflet-popup-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.fav-icon{
+  color: #6fff00;
+}
+
+.fav-container{
+  flex:1;
+}
+
