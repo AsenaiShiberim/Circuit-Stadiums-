@@ -21,7 +21,7 @@ export default function Map() {
   // Update localStorage when favorites change
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
-    console.log(favorites)
+    console.log(favorites);
   }, [favorites]);
 
   const handleSavedFavorites = (eventId) => {
@@ -33,11 +33,10 @@ export default function Map() {
   };
 
   const handleRemoveFavorites = (eventId) => {
-    const updatedFavorites = favorites.filter(fav => fav.id !== eventId);
+    const updatedFavorites = favorites.filter((fav) => fav.id !== eventId);
     setFavorites(updatedFavorites);
-    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
-  
 
   const icon = new Icon({
     iconUrl: "./darkmarker.png",
@@ -47,10 +46,14 @@ export default function Map() {
 
   return (
     <div className="content">
-      <div className="flex flex-col w-full h-full">
+      <div className="flex flex-col w-4/5 h-full">
         <div className="h-20" />
 
-        <MapContainer center={[51.505, -0.09]} zoom={13} className="map-container">
+        <MapContainer
+          center={[51.505, -0.09]}
+          zoom={13}
+          className="map-container"
+        >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -103,24 +106,30 @@ export default function Map() {
             </Marker>
           ))}
         </MapContainer>
-        <div className="fav-container">
+      </div>
+      <div className="fav-container">
   <h1 className="fav-section">Saved Section</h1>
   {favorites
     .map((id) => events.find((event) => event.id === id))
-    .filter(Boolean) // remove undefined in case id not found
+    .filter(Boolean)
     .map((event) => (
-      <ul key={event.id}>
-        <li>
-          <h1>{event.title}</h1>
-          <h2>{event.description}</h2>
-        </li>
-      </ul>
+      <div key={event.id} className="fav-card">
+        <h1 className="fav-title">{event.title}</h1>
+        <p className="fav-desc">{event.description}</p>
+        <Image
+                      src= '/remove.png'                       
+                      
+                      width={25}
+                      height={25}
+                      alt="Saved icon"
+                    />
+                  
+        
+        {/* You can add more like event.date, event.category, etc. */}
+      </div>
     ))}
 </div>
 
-
-        </div>
-      </div>
-    
+    </div>
   );
 }
