@@ -6,9 +6,20 @@ import events from "./events";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+//import { error } from "console";
 
 export default function Map() {
   const [favorites, setFavorites] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  //filter events by category or id
+
+  const filteredEvents = events.filter((event) =>
+    event.category?.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  console.log(events);
+
+
 
   // Load favorites from localStorage on first render
   useEffect(() => {
@@ -44,10 +55,14 @@ export default function Map() {
     iconAnchor: [12, 41],
   });
 
+
+  
+
   return (
     <div className="content">
       <div className="flex flex-col w-4/5 h-full">
         <div className="h-20" />
+        
 
         <MapContainer
           center={[51.505, -0.09]}
@@ -59,7 +74,7 @@ export default function Map() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
 
-          {events.map((event) => (
+          {filteredEvents.map((event) => (
             <Marker key={event.id} position={event.location} icon={icon}>
               <Popup>
                 <div className="card-container">
@@ -108,6 +123,17 @@ export default function Map() {
         </MapContainer>
       </div>
       <div className="fav-container">
+      <div className="search-container">
+        <input
+              type ='text'
+              placeholder="Search for an event"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+
+              className="search-input"
+              />
+
+      </div>
         <h1 className="fav-section">Saved Section</h1>
         {favorites
           .map((id) => events.find((event) => event.id === id))
@@ -131,13 +157,8 @@ export default function Map() {
             </div>
           ))}
       </div>
-      {/* Search filter */}
-      <div className="search-container">
-        <div>
-          hi
-        </div>
-
-      </div>
+      
+      
     </div>
   );
 }
