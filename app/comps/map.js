@@ -113,15 +113,15 @@ export default function Map() {
     .map((id) => events.find((event) => event.id === id))
     .filter(Boolean)
     .map((event) => (
-      <div key={event.id} className="fav-card">
+      <div key={event.id} className="fav-card" onClick={() => handleSavedFavorites(event.id)}>
         <h1 className="fav-title">{event.title}</h1>
         <p className="fav-desc">{event.description}</p>
         <Image
                       src= '/remove.png'                       
                       
-                      width={25}
-                      height={25}
-                      alt="Saved icon"
+                      width={15}
+                      height={15}
+                      alt="remove icon"
                     />
                   
         
