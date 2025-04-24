@@ -1,5 +1,6 @@
 //import Map from './comps/map'
 'use client';
+//import DialogAi from './comps/dialog'
 
 
 import dynamic from "next/dynamic";

@@ -108,28 +108,36 @@ export default function Map() {
         </MapContainer>
       </div>
       <div className="fav-container">
-  <h1 className="fav-section">Saved Section</h1>
-  {favorites
-    .map((id) => events.find((event) => event.id === id))
-    .filter(Boolean)
-    .map((event) => (
-      <div key={event.id} className="fav-card" onClick={() => handleSavedFavorites(event.id)}>
-        <h1 className="fav-title">{event.title}</h1>
-        <p className="fav-desc">{event.description}</p>
-        <Image
-                      src= '/remove.png'                       
-                      
-                      width={15}
-                      height={15}
-                      alt="remove icon"
-                    />
-                  
-        
-        {/* You can add more like event.date, event.category, etc. */}
-      </div>
-    ))}
-</div>
+        <h1 className="fav-section">Saved Section</h1>
+        {favorites
+          .map((id) => events.find((event) => event.id === id))
+          .filter(Boolean)
+          .map((event) => (
+            <div
+              key={event.id}
+              className="fav-card"
+              onClick={() => handleSavedFavorites(event.id)}
+            >
+              <h1 className="fav-title">{event.title}</h1>
+              <p className="fav-desc">{event.description}</p>
+              <Image
+                src="/remove.png"
+                width={15}
+                height={15}
+                alt="remove icon"
+              />
 
+              {/* You can add more like event.date, event.category, etc. */}
+            </div>
+          ))}
+      </div>
+      {/* Search filter */}
+      <div className="search-container">
+        <div>
+          hi
+        </div>
+
+      </div>
     </div>
   );
 }
