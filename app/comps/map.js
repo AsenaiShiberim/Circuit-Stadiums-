@@ -15,7 +15,7 @@ export default function Map() {
   //filter events by category or id
 
   const filteredEvents = events.filter((event) =>
-    event.category?.toLowerCase().includes(searchQuery.toLowerCase())
+    event.category? || event.location.toLowerCase().includes(searchQuery.toLowerCase())
   );
   console.log(events);
 
