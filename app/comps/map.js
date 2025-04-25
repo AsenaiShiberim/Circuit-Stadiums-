@@ -63,11 +63,7 @@ useEffect(() => {
     }
   };
 
-  const handleRemoveFavorites = (eventId) => {
-    const updatedFavorites = favorites.filter((fav) => fav.id !== eventId);
-    setFavorites(updatedFavorites);
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-  };
+  
 
   const icon = new Icon({
     iconUrl: "./location.png",
