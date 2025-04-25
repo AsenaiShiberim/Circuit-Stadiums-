@@ -6,6 +6,7 @@ import events from "./events";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+//import Image from 'Next/Image'
 //import { error } from "console";
 
 export default function Map() {
@@ -15,19 +16,28 @@ export default function Map() {
 
 
 
-
   //filter events by category or id
 
-  const filteredEvents = events.filter((event) =>
-    event.category?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    event.title.toLowerCase().includes(searchQuery.toLowerCase())
-
   
 
-  );
-  console.log(events);
+  const [filteredEvents, setFilteredEvents] = useState(events);
 
-  
+useEffect(() => {
+  setLoading(true);
+
+  const timeout = setTimeout(() => {
+    const filtered = events.filter((event) =>
+      event.category?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      event.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredEvents(filtered);
+    setLoading(false);
+  }, 500); // Simulate delay
+
+  return () => clearTimeout(timeout);
+}, [searchQuery]);
+
+
 
 
 
@@ -70,8 +80,12 @@ export default function Map() {
 
   return (
     <div className="content">
+      
       <div className="flex flex-col w-4/5 h-full">
+      <h1 className="text-4xl font-extrabold ">Circuits & Stadiums</h1>
+
         <div className="h-20" />
+
         
 
         <MapContainer
@@ -84,8 +98,14 @@ export default function Map() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
+          {loading && (
+            <div className="absolute top-2 left-1/2 transform-translate-x-1/2 z-{10000}">
+              <Image src = '/loading.png' alt = 'loading...' width ={20} height = {20} />
+            </div>
+          )}
 
           {filteredEvents.map((event) => (
+            
             <Marker key={event.id} position={event.location} icon={icon}>
               <Popup>
                 <div className="card-container">
@@ -172,4 +192,4 @@ export default function Map() {
       
     </div>
   );
-}
+  };
