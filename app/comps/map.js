@@ -11,13 +11,23 @@ import { useState, useEffect } from "react";
 export default function Map() {
   const [favorites, setFavorites] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [loading, setLoading] =useState(false)
+
+
+
 
   //filter events by category or id
 
   const filteredEvents = events.filter((event) =>
-    event.category? || event.location.toLowerCase().includes(searchQuery.toLowerCase())
+    event.category?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    event.title.toLowerCase().includes(searchQuery.toLowerCase())
+
+  
+
   );
   console.log(events);
+
+  
 
 
 
@@ -50,7 +60,7 @@ export default function Map() {
   };
 
   const icon = new Icon({
-    iconUrl: "./darkmarker.png",
+    iconUrl: "./location.png",
     iconSize: [41, 41],
     iconAnchor: [12, 41],
   });
@@ -68,6 +78,7 @@ export default function Map() {
           center={[51.505, -0.09]}
           zoom={13}
           className="map-container"
+          zoomAnimation={true}
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
