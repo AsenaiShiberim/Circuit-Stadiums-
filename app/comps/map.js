@@ -6,8 +6,6 @@ import events from "./events";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-//import Image from 'Next/Image'
-//import { error } from "console";
 
 export default function Map() {
   const [favorites, setFavorites] = useState([]);
@@ -37,7 +35,7 @@ useEffect(() => {
   return () => clearTimeout(timeout);
 }, [searchQuery]);
 
-
+console.log(events.link)
 
 
 
@@ -76,11 +74,17 @@ useEffect(() => {
 
   return (
     <div className="content">
+      {loading && (
+            <div className="absolute top-2 left-1/2 transform-translate-x-1/2 z-{10000}">
+              <Image src = '/loading.png' alt = 'loading...' width ={60} height = {60} />
+            </div>
+          )}
       
       <div className="flex flex-col w-4/5 h-full">
       <h1 className="text-4xl font-extrabold ">Circuits & Stadiums</h1>
 
-        <div className="h-20" />
+        
+
 
         
 
@@ -90,62 +94,64 @@ useEffect(() => {
           className="map-container"
           zoomAnimation={true}
         >
+
+          
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
-          {loading && (
-            <div className="absolute top-2 left-1/2 transform-translate-x-1/2 z-{10000}">
-              <Image src = '/loading.png' alt = 'loading...' width ={20} height = {20} />
-            </div>
-          )}
+          
 
-          {filteredEvents.map((event) => (
+          {filteredEvents.map((event) => (<Marker key={event.id} position={event.location} icon={icon}>
+  <Popup>
+    <div className="card-container">
+      <h1 className="event-title">{event.title}</h1>
+
+      <div className="event-desc-wrapper">
+        <h2 className="event-desc">{event.description}</h2>
+      </div>
+
+      <div className="bottom-card-elements">
+        <h3>{event.date}</h3>
+      </div>
+
+      {/* fav icon and wikipedia link with flexbox */}
+      <div className="flex justify-between items-center">
+        {/* Fav icon */}
+        <div
+          className="fav-icon cursor-pointer"
+          onClick={() => handleSavedFavorites(event.id)}
+        >
+          <Image
+            src={
+              favorites.includes(event)
+                ? "/starfilled.png"
+                : "/staroutline.png"
+            }
+            width={25}
+            height={25}
+            alt="Saved icon"
+          />
+        </div>
+
+        {/* Wikipedia link */}
+        <div className="flex justify-center items-center">
+          <Link href={event.link} target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/wikipedia1.png"
+              alt="watch the video"
+              width={25}
+              height={25}
+            />
+          </Link>
+        </div>
+      </div>
+    </div>
+  </Popup>
+</Marker>
+
             
-            <Marker key={event.id} position={event.location} icon={icon}>
-              <Popup>
-                <div className="card-container">
-                  <h1 className="event-title">{event.title}</h1>
-
-                  <div className="event-desc-wrapper">
-                    <h2 className="event-desc">{event.description}</h2>
-                  </div>
-
-                  <div className="bottom-card-elements">
-                    <h3>{event.date}</h3>
-                    <Link
-                      href={event.video}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Image
-                        src="/youtube.png"
-                        alt="watch the video"
-                        width={25}
-                        height={25}
-                      />
-                    </Link>
-                  </div>
-
-                  {/* fav icon */}
-                  <div
-                    className="fav-icon cursor-pointer"
-                    onClick={() => handleSavedFavorites(event.id)}
-                  >
-                    <Image
-                      src={
-                        favorites.includes(event)
-                          ? "/starfilled.png"
-                          : "/staroutline.png"
-                      }
-                      width={25}
-                      height={25}
-                      alt="Saved icon"
-                    />
-                  </div>
-                </div>
-              </Popup>
-            </Marker>
+           
           ))}
         </MapContainer>
       </div>

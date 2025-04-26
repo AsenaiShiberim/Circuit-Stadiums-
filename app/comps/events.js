@@ -9,7 +9,7 @@ const events = [
       "lng": 72.8258
     },
     "description": "India defeated Sri Lanka in the Cricket World Cup Final held at Wankhede Stadium in Mumbai.",
-    "Link": "https://en.wikipedia.org/wiki/2011_Cricket_World_Cup_Final"
+    "link": "https://en.wikipedia.org/wiki/2011_Cricket_World_Cup_Final"
   },
   {
     "id": "tech-001",
@@ -21,7 +21,7 @@ const events = [
       "lng": -0.1276
     },
     "description": "The first text message, saying 'Merry Christmas', was sent in the UK by Neil Papworth.",
-    "Link": "https://en.wikipedia.org/wiki/SMS"
+    "link": "https://en.wikipedia.org/wiki/SMS"
   },
   {
     "id": "sports-002",
@@ -33,7 +33,7 @@ const events = [
       "lng": 139.6917
     },
     "description": "Tokyo hosted the Summer Olympics in 2021 after a one-year COVID delay, with no public spectators.",
-    "Link": "https://en.wikipedia.org/wiki/2020_Summer_Olympics"
+    "link": "https://en.wikipedia.org/wiki/2020_Summer_Olympics"
   },
   {
     "id": "tech-002",
@@ -45,7 +45,7 @@ const events = [
       "lng": 126.9780
     },
     "description": "Samsung launched the Galaxy S, kicking off its globally dominant smartphone series.",
-    "Link": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S"
+    "link": "https://en.wikipedia.org/wiki/Samsung_Galaxy_S"
   },
   {
     "id": "sports-003",
@@ -57,7 +57,7 @@ const events = [
       "lng": 129.0756
     },
     "description": "Brazil claimed its fifth FIFA World Cup title by beating Germany in Yokohama, Japan.",
-    "Link": "https://en.wikipedia.org/wiki/2002_FIFA_World_Cup_Final"
+    "link": "https://en.wikipedia.org/wiki/2002_FIFA_World_Cup_Final"
   },
   {
     "id": "tech-003",
@@ -69,7 +69,7 @@ const events = [
       "lng": 18.4241
     },
     "description": "Ubuntu, the popular open-source Linux OS, was launched in Cape Town, South Africa.",
-    "video": "https://en.wikipedia.org/wiki/Ubuntu"
+    "link": "https://en.wikipedia.org/wiki/Ubuntu"
   },
   {
     "id": "sports-004",
@@ -81,7 +81,7 @@ const events = [
       "lng": 2.2496
     },
     "description": "Nadal claimed his record 14th Roland-Garros title at Stade Roland Garros in Paris.",
-    "video": "https://en.wikipedia.org/wiki/2022_French_Open_%E2%80%93_Men%27s_singles"
+    "link": "https://en.wikipedia.org/wiki/2022_French_Open_%E2%80%93_Men%27s_singles"
   },
   {
     "id": "tech-004",
@@ -93,7 +93,7 @@ const events = [
       "lng": 121.4737
     },
     "description": "Tesla began production in its Shanghai Gigafactory, the first outside the U.S.",
-    "video": "https://en.wikipedia.org/wiki/Gigafactory_Shanghai"
+    "link": "https://en.wikipedia.org/wiki/Gigafactory_Shanghai"
   },
   {
     "id": "sports-005",
@@ -105,7 +105,7 @@ const events = [
       "lng": -2.9350
     },
     "description": "The 2023 Tour de France began in Bilbao, Spain, with intense mountain challenges.",
-    "video": "https://en.wikipedia.org/wiki/2023_Tour_de_France"
+    "link": "https://en.wikipedia.org/wiki/2023_Tour_de_France"
   },
   {
     "id": "tech-005",
@@ -117,7 +117,7 @@ const events = [
       "lng": -81.3792
     },
     "description": "Laszlo Hanyecz made the first real-world Bitcoin transaction by buying 2 pizzas for 10,000 BTC.",
-    "video": "https://en.wikipedia.org/wiki/Bitcoin#History"
+    "link": "https://en.wikipedia.org/wiki/Bitcoin#History"
   },
   {
     "id": "sports-006-unique",
@@ -129,7 +129,7 @@ const events = [
       "lng": 13.4050
     },
     "description": "Usain Bolt set a new 100m world record of 9.58 seconds at the World Championships in Berlin.",
-    "Link": "https://en.wikipedia.org/wiki/Usain_Bolt"
+    "link": "https://en.wikipedia.org/wiki/Usain_Bolt"
   },
   {
     "id": "sports-007",
@@ -141,7 +141,7 @@ const events = [
       "lng": 116.4074
     },
     "description": "Michael Phelps won 8 gold medals at the Beijing Olympics, setting a record for the most golds in a single Games.",
-    "Link": "https://en.wikipedia.org/wiki/Michael_Phelps"
+    "link": "https://en.wikipedia.org/wiki/Michael_Phelps"
   },
   {
     "id": "sports-008",
@@ -153,7 +153,7 @@ const events = [
       "lng": -1.1398
     },
     "description": "Leicester City defied 5000-1 odds to win the English Premier League title.",
-    "Link": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Leicester_City_F.C._season"
+    "link": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Leicester_City_F.C._season"
   },
   {
     "id": "sports-009",
@@ -165,7 +165,7 @@ const events = [
       "lng": -0.2140
     },
     "description": "Serena Williams completed her career Grand Slam by winning Wimbledon.",
-    "Link": "https://en.wikipedia.org/wiki/Serena_Williams"
+    "link": "https://en.wikipedia.org/wiki/Serena_Williams"
   },
   {
     "id": "sports-010-unique",
@@ -177,7 +177,7 @@ const events = [
       "lng": -87.6553
     },
     "description": "The Chicago Cubs won the World Series, ending a 108-year championship drought.",
-    "Link": "https://en.wikipedia.org/wiki/2016_World_Series"
+    "link": "https://en.wikipedia.org/wiki/2016_World_Series"
   },
   {
     "id": "tech-006",
@@ -189,7 +189,7 @@ const events = [
       "lng": 6.0550
     },
     "description": "Tim Berners-Lee launched the first website, marking the birth of the World Wide Web.",
-    "Link": "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
+    "link": "https://en.wikipedia.org/wiki/Tim_Berners-Lee"
   },
   {
     "id": "tech-007",
@@ -201,7 +201,7 @@ const events = [
       "lng": -74.0060
     },
     "description": "IBM's Deep Blue became the first computer to defeat a world chess champion in a match.",
-    "Link": "https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)"
+    "link": "https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)"
   },
   {
     "id": "tech-008",
@@ -213,7 +213,7 @@ const events = [
       "lng": -122.4194
     },
     "description": "Apple introduced the iPhone, revolutionizing the smartphone industry.",
-    "Link": "https://en.wikipedia.org/wiki/IPhone"
+    "link": "https://en.wikipedia.org/wiki/IPhone"
   },
   {
     "id": "tech-009",
@@ -225,7 +225,7 @@ const events = [
       "lng": -77.0369
     },
     "description": "The Human Genome Project successfully completed the sequencing of the human genome.",
-    "Link": "https://en.wikipedia.org/wiki/Human_Genome_Project"
+    "link": "https://en.wikipedia.org/wiki/Human_Genome_Project"
   },
   {
     "id": "tech-010",
@@ -237,7 +237,7 @@ const events = [
       "lng": -122.4194
     },
     "description": "OpenAI launched ChatGPT, a conversational AI model that gained widespread popularity.",
-    "Link": "https://en.wikipedia.org/wiki/ChatGPT"
+    "link": "https://en.wikipedia.org/wiki/ChatGPT"
   }, {
     "id": "sports-011",
     "title": "Argentina Wins 2022 FIFA World Cup",
@@ -248,7 +248,7 @@ const events = [
       "lng": 51.4881
     },
     "description": "Argentina defeated France in a dramatic penalty shootout to win the 2022 FIFA World Cup in Qatar.",
-    "Link": "https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_final"
+    "link": "https://en.wikipedia.org/wiki/2022_FIFA_World_Cup_final"
   },
   {
     "id": "sports-012",
@@ -260,7 +260,7 @@ const events = [
       "lng": -82.5033
     },
     "description": "The Tampa Bay Buccaneers defeated the Kansas City Chiefs, with Tom Brady earning his 7th Super Bowl ring.",
-    "Link": "https://en.wikipedia.org/wiki/Super_Bowl_LV"
+    "link": "https://en.wikipedia.org/wiki/Super_Bowl_LV"
   },
   {
     "id": "sports-013",
@@ -272,7 +272,7 @@ const events = [
       "lng": 13.4050
     },
     "description": "Usain Bolt set a new world record of 9.58 seconds in the 100m final at the World Championships in Berlin.",
-    "Link": "https://en.wikipedia.org/wiki/Usain_Bolt"
+    "link": "https://en.wikipedia.org/wiki/Usain_Bolt"
   },
   {
     "id": "sports-014",
@@ -284,7 +284,7 @@ const events = [
       "lng": -87.6553
     },
     "description": "The Chicago Cubs won their first World Series in 108 years by defeating the Cleveland Indians.",
-    "Link": "https://en.wikipedia.org/wiki/2016_World_Series"
+    "link": "https://en.wikipedia.org/wiki/2016_World_Series"
   },
   {
     "id": "sports-015",
@@ -296,7 +296,7 @@ const events = [
       "lng": -115.1745
     },
     "description": "Mayweather came out of retirement to defeat UFC champion McGregor in a high-profile boxing match.",
-    "Link": "https://en.wikipedia.org/wiki/Floyd_Mayweather_Jr._vs._Conor_McGregor"
+    "link": "https://en.wikipedia.org/wiki/Floyd_Mayweather_Jr._vs._Conor_McGregor"
   },
   {
     "id": "tech-011",
@@ -308,7 +308,7 @@ const events = [
       "lng": -122.0090
     },
     "description": "Apple unveiled its first ARM-based M1 chip, beginning a new era of Mac performance and efficiency.",
-    "Link": "https://en.wikipedia.org/wiki/Apple_M1"
+    "link": "https://en.wikipedia.org/wiki/Apple_M1"
   },
   {
     "id": "tech-012-unique",
@@ -320,7 +320,7 @@ const events = [
       "lng": -122.4194
     },
     "description": "OpenAI released ChatGPT, a conversational AI model that rapidly gained global popularity.",
-    "Link": "https://en.wikipedia.org/wiki/ChatGPT"
+    "link": "https://en.wikipedia.org/wiki/ChatGPT"
   },
   {
     "id": "tech-013",
@@ -332,7 +332,7 @@ const events = [
       "lng": -122.1484
     },
     "description": "Facebook announced the acquisition of photo-sharing app Instagram for $1 billion.",
-    "Link": "https://en.wikipedia.org/wiki/Instagram"
+    "link": "https://en.wikipedia.org/wiki/Instagram"
   },
   {
     "id": "tech-014",
@@ -344,7 +344,7 @@ const events = [
       "lng": -122.1391
     },
     "description": "Microsoft released Windows 95, introducing the Start Menu and revolutionizing personal computing.",
-    "Link": "https://en.wikipedia.org/wiki/Windows_95"
+    "link": "https://en.wikipedia.org/wiki/Windows_95"
   },
   {
     "id": "tech-015",
@@ -356,7 +356,7 @@ const events = [
       "lng": -122.0841
     },
     "description": "Google completed its $1.65 billion acquisition of YouTube, the leading online video platform.",
-    "Link": "https://en.wikipedia.org/wiki/YouTube"
+    "link": "https://en.wikipedia.org/wiki/YouTube"
   }
 ];
 
